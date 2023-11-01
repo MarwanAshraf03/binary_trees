@@ -20,12 +20,10 @@ int main(void)
     binary_tree_print(root);
 
     ret = binary_tree_is_root(root);
-    printf("Is %d a leaf: %d\n", root->n, ret);
+    printf("Is %d a root: %d\n", root->n, ret);
     ret = binary_tree_is_root(root->right);
-    printf("Is %d a leaf: %d\n", root->right->n, ret);
+    printf("Is %d a root: %d\n", root->right->n, ret);
     ret = binary_tree_is_root(root->right->right);
-    printf("Is %d a leaf: %d\n", root->right->right->n, ret);
-    ret = binary_tree_is_root(NULL);
-    printf("Is NULL a leaf: %d\n", ret);
+    printf("Is %d a root: %d\n", root->right->right->n, ret);
     return (0);
 }
