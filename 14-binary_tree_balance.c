@@ -8,33 +8,34 @@
 */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	int left, right;
+	int right, left;
+
 	if (!tree)
 		return (0);
-	left = extra_height(tree->left, 0);
-	right = extra_height(tree->right, 0);
+	if (tree->left)
+		left = extra(tree->left, 1);
+	else
+		left = 0;
+	if (tree->right)
+		right = extra(tree->right, 1);
+	else
+		right = 0;
 	return (left - right);
 }
 
 /**
- * extra_height - an extra function to help me use counter
- * @tree: the node to be used to calculate height
- * @count: the count (height) of @tree
- * Return: returns the height of left or right node (the bigger one)
+ * extra - helper function to calculate subtree height
+ * @tree: root node
+ * @count: initial count
+ * Return: height of the tree
 */
-size_t extra_height(const binary_tree_t *tree, size_t count)
+int extra(const binary_tree_t *tree, int count)
 {
-	size_t left_count = count, right_count = count;
+	int left = count, right = count;
 
 	if (tree->left)
-	{
-		left_count++;
-		left_count = extra_height(tree->left, left_count);
-	}
+		left = extra(tree->left, ++left);
 	if (tree->right)
-	{
-		right_count++;
-		right_count = extra_height(tree->right, right_count);
-	}
-	return ((right_count > left_count) ? right_count : left_count);
+		right = extra(tree->right, ++right);
+	return ((left > right) ? left : right);
 }
