@@ -43,6 +43,9 @@ size_t binary_tree_leaves(const binary_tree_t *tree);
 size_t extra_leaves(const binary_tree_t *tree);
 size_t binary_tree_nodes(const binary_tree_t *tree);
 size_t extra_nodes(const binary_tree_t *tree);
+int binary_tree_balance(const binary_tree_t *tree);
+int extra_balance(const binary_tree_t *tree);
+binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 
 
 #endif
