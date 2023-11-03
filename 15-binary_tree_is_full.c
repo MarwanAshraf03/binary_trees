@@ -17,7 +17,7 @@ int binary_tree_is_full(const binary_tree_t *tree)
 	height = extra_height(tree, 0);
 	for (i = 0; i < height; i++)
 		new *= 2;
-	if (new == n_leaves)
+	if ((new == n_leaves) || (n_leaves == 0))
 		return (1);
 	return (0);
 }
