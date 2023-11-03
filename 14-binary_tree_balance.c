@@ -24,7 +24,7 @@ int binary_tree_balance(const binary_tree_t *tree)
 }
 
 /**
- * extra - helper function to calculate subtree height
+ * extra_balance - helper function to calculate subtree height
  * @tree: root node
  * @count: initial count
  * Return: height of the tree
