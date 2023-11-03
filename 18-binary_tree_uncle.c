@@ -1,9 +1,9 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_sibling - returns node's sibling
+ * binary_tree_uncle - returns node's uncle
  * @node: node to be used
- * Return: pointer to @node's sibling
+ * Return: pointer to @node's uncle
 */
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
