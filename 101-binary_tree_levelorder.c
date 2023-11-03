@@ -14,7 +14,7 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 }
 
 /**
- * extra_level_order - helper function to call 
+ * extra_level_order - helper function to call
  * @tree: root node
  * @func: function printing node value
 */
