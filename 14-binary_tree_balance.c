@@ -13,11 +13,11 @@ int binary_tree_balance(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 	if (tree->left)
-		left = extra(tree->left, 1);
+		left = extra_balance(tree->left, 1);
 	else
 		left = 0;
 	if (tree->right)
-		right = extra(tree->right, 1);
+		right = extra_balance(tree->right, 1);
 	else
 		right = 0;
 	return (left - right);
@@ -29,13 +29,13 @@ int binary_tree_balance(const binary_tree_t *tree)
  * @count: initial count
  * Return: height of the tree
 */
-int extra(const binary_tree_t *tree, int count)
+int extra_balance(const binary_tree_t *tree, int count)
 {
 	int left = count, right = count;
 
 	if (tree->left)
-		left = extra(tree->left, ++left);
+		left = extra_balance(tree->left, ++left);
 	if (tree->right)
-		right = extra(tree->right, ++right);
+		right = extra_balance(tree->right, ++right);
 	return ((left > right) ? left : right);
 }
